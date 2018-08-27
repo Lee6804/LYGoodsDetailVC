@@ -89,6 +89,7 @@
     return self;
 }
 
+#pragma mark 布局
 -(void)setupUI{
     
     self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
@@ -176,11 +177,13 @@
     [self.typeBackView addSubview:self.collectionView];
 }
 
+#pragma mark 隐藏View操作
 -(void)hiddenViewClick{
     
     [self hiddenView];
 }
 
+#pragma mark 展示View
 -(void)showView{
 
     UIWindow *window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, SWidth, SHeight)];
@@ -194,6 +197,7 @@
     [self showAnimation];
 }
 
+#pragma mark 动画展示出现
 -(void)showAnimation{
     
     [UIView animateWithDuration:0.25 animations:^{
@@ -202,6 +206,7 @@
     }];
 }
 
+#pragma mark 动画展示消失
 -(void)hiddenView{
     
     [UIView animateWithDuration:0.25 animations:^{
@@ -216,7 +221,7 @@
     }];
 }
 
-
+#pragma mark 更新typeBackView上的数据信息
 -(void)refreshUIWithData:(NSDictionary *)infoDic{
     
     self.infoDic = infoDic;
@@ -294,6 +299,7 @@
     [self.collectionView reloadData];
 }
 
+#pragma mark collectionView的button选择回调刷新
 -(void)reloadCol:(NSIndexPath *)indexPath{
     
     //kindTitleArr用于存放 类型名称 如果全部分类都已经选择了一个则数组位空 显示的就是 已选某些种类
